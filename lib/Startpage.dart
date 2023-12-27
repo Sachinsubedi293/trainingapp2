@@ -1,7 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:terainingapp2/Loginpage.dart';
+import 'package:terainingapp2/loginpage.dart';
+import 'package:terainingapp2/signuppage.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -54,20 +55,27 @@ class StartPage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                width: MediaQuery.of(context).size.width*0.8,
-                height: 60,
-                alignment: Alignment.center,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  color:Color.fromARGB(200, 33, 149, 243),
-                ),
-                child: const Text(
-                  "SignUp",
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const SignUp();
+                  },));
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width*0.8,
+                  height: 60,
+                  alignment: Alignment.center,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    color:Color.fromARGB(200, 33, 149, 243),
+                  ),
+                  child: const Text(
+                    "SignUp",
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
                 ),
               ),
             ],
